@@ -1,4 +1,4 @@
-import LocaleSwitcher from "@/components/LocaleSwitcher";
+import { Header } from "@/components/Header";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 
@@ -17,7 +17,7 @@ export default async function LocaleLayout({
         <html lang={locale}>
             <body>
                 <NextIntlClientProvider messages={messages}>
-                    <LocaleSwitcher />
+                    <Header />
                     {children}
                 </NextIntlClientProvider>
             </body>
