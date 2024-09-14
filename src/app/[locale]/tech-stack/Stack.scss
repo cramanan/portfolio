@@ -1,0 +1,17 @@
+#stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    ul {
+        height: fit-content;
+        list-style-type: none;
+        border: solid;
+        border-top: none;
+
+        li {
+            width: 200px;
+            height: 100px;
+        }
+    }
+}

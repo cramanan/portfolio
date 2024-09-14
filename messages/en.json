@@ -5,6 +5,11 @@
         "skills": "Technical Skills",
         "More": "See more"
     },
+    "Tech-Stack": {
+        "title": "My Tech-Stack",
+        "learning": "Learning",
+        "basics": "The basics"
+    },
     "LocaleSwitcher": {
         "locale": "{locale, select, fr {🇫🇷 French} en {🇺🇸 English} other {Unknown}}"
     }

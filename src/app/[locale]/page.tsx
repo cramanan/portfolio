@@ -4,6 +4,7 @@ import { Link } from "@/i18n/routing";
 
 import svgs from "./svgs.json";
 import "./Home.scss";
+import picture from "../assets/picture.webp";
 
 export default function Home() {
     const t = useTranslations("Home");
@@ -13,7 +14,7 @@ export default function Home() {
                 <Image
                     width={140}
                     height={140}
-                    src="/picture.jpg"
+                    src={picture}
                     alt="A picture of Cyril Ram."
                 />
                 <div id="job">
@@ -22,7 +23,7 @@ export default function Home() {
                 </div>
             </div>
             <div id="skills">
-                <div>
+                <div id="head">
                     <h2>{t("skills")}</h2>
                     <Link href="/tech-stack">{t("More")}</Link>
                 </div>
