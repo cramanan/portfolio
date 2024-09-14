@@ -1,16 +1,9 @@
-import Link from "next/link";
+import LocaleSwitcher from "./LocaleSwitcher";
 
-export function Navbar() {
+export function Header() {
     return (
-        <nav>
-            <h1>Cyril Ram.</h1>
-            <div id="flags">
-                <Link href=".">lmao</Link>
-            </div>
-        </nav>
+        <header>
+            <LocaleSwitcher />
+        </header>
     );
-}
-
-export function Footer() {
-    return <footer></footer>;
 }

@@ -2,5 +2,8 @@
     "Home": {
         "dev1": "Full-Stack",
         "dev2": "developer"
+    },
+    "LocaleSwitcher": {
+        "locale": "{locale, select, fr {🇫🇷} en {🇺🇸} other {Unknown}}"
     }
 }
