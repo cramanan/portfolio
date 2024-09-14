@@ -32,14 +32,12 @@ export default function LocaleSwitcherSelect({
     }
 
     return (
-        <label>
-            <select
-                defaultValue={defaultValue}
-                disabled={isPending}
-                onChange={onSelectChange}
-            >
-                {children}
-            </select>
-        </label>
+        <select
+            defaultValue={defaultValue}
+            disabled={isPending}
+            onChange={onSelectChange}
+        >
+            {children}
+        </select>
     );
 }

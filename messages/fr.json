@@ -1,9 +1,11 @@
 {
     "Home": {
         "dev1": "Développeur",
-        "dev2": "Full-Stack"
+        "dev2": "Full-Stack",
+        "skills": "Compétences Techniques",
+        "More": "Voir plus"
     },
     "LocaleSwitcher": {
-        "locale": "{locale, select, fr {🇫🇷} en {🇺🇸} other {Unknown}}"
+        "locale": "{locale, select, fr {🇫🇷 Français} en {🇺🇸 Anglais} other {Unknown}}"
     }
 }

@@ -40,6 +40,35 @@ a {
     color: inherit;
 }
 
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header a {
+    text-decoration: none;
+}
+
+header nav {
+    display: none;
+}
+
+@media screen and (min-width: 744px) {
+    header nav {
+        display: flex;
+    }
+}
+
+header select {
+    border: none;
+    font-family: Asap;
+    background: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 4px;
+}
+
 @media (prefers-color-scheme: dark) {
     html {
         color-scheme: dark;

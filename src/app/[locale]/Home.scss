@@ -1,0 +1,19 @@
+#face-card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+
+    #job {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        font-size: 28px;
+    }
+}
+
+#skills {
+    h2 {
+        font-size: 20px;
+    }
+}
