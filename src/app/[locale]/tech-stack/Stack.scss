@@ -10,8 +10,17 @@
         border-top: none;
 
         li {
-            width: 200px;
-            height: 100px;
+            .stack-element {
+                display: flex;
+                justify-content: space-evenly;
+
+                .tech {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
         }
     }
 }

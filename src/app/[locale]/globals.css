@@ -26,8 +26,6 @@ body {
     background: var(--background);
     font-family: Asap;
     padding: 20px;
-    display: grid;
-    row-gap: 20px;
 }
 
 * {
