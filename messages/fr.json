@@ -6,8 +6,7 @@
         "More": "Voir plus"
     },
     "Tech-Stack": {
-        "title": "Ma Stack Technique",
-        "learning": "En train d'apprendre"
+        "title": "Ma Stack Technique"
     },
     "LocaleSwitcher": {
         "locale": "{locale, select, fr {🇫🇷 Français} en {🇺🇸 Anglais} other {Unknown}}"

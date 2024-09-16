@@ -1,3 +1,12 @@
-<svg width="1155" height="1000" viewBox="0 0 1155 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M577.344 0L1154.69 1000H0L577.344 0Z" fill="white"/>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512.000000 512.000000" fill="#fff"
+    preserveAspectRatio="xMidYMid meet">
+    <metadata>
+        Created by potrace 1.11, written by Peter Selinger 2001-2013
+    </metadata>
+    <circle cx="256" cy="256" data-circle="true" fill="black" r="250" stroke="white" stroke-width="6px"></circle>
+    <path fill="#f2f2f2"
+        d="m 135.13073,346.18772 c -1.48166,-0.1821 -2.02377,-0.52804 -1.78845,-1.14127 0.54641,-1.42391 16.99997,-30.34357 62.64819,-110.11378 52.7265,-92.13951 61.89259,-107.98683 62.53177,-108.11161 0.27574,-0.0538 21.03443,35.81236 46.13042,79.70263 75.66067,132.32262 79.43954,139.03829 78.55269,139.60135 -0.79376,0.50395 -243.98427,0.5654 -248.07462,0.0627 z"
+        id="path714" />
+
 </svg>

@@ -12,6 +12,7 @@ import pythonLogo from "../../assets/svgs/python.svg";
 import sqliteLogo from "../../assets/svgs/sqlite.svg";
 import typescriptLogo from "../../assets/svgs/typescript.svg";
 import reactLogo from "../../assets/svgs/react.svg";
+import sassLogo from "../../assets/svgs/sass.svg";
 import gitLogo from "../../assets/svgs/git.svg";
 import dockerLogo from "../../assets/svgs/docker.svg";
 import golangLogo from "../../assets/svgs/golang.svg";
@@ -29,14 +30,15 @@ const elements: Props[] = [
     ],
     [
         { title: "Git", path: gitLogo },
-        { title: "Docker", path: postgresLogo },
+        { title: "Docker", path: dockerLogo },
     ],
     [
         { title: "Golang", path: golangLogo },
-        { title: "PostgreSQL", path: dockerLogo },
+        { title: "PostgreSQL", path: postgresLogo },
     ],
     [
         { title: "React", path: reactLogo },
+        { title: "Sass", path: sassLogo },
         { title: "TypeScript", path: typescriptLogo },
     ],
     [
@@ -76,7 +78,6 @@ export default function TechStack() {
         <>
             <h2>{t("title")}</h2>
             <div id="stack">
-                <h3>{t("learning")}</h3>
                 <ul>
                     {elements.map((elt, idx) => (
                         <StackElement key={idx} props={elt} />

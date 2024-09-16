@@ -8,11 +8,22 @@
         list-style-type: none;
         border: solid;
         border-top: none;
+        display: grid;
+        gap: 10px;
+        padding: 6px;
 
         li {
             .stack-element {
+                width: 240px;
+                border-radius: 10px;
+                border: solid 2px;
                 display: flex;
                 justify-content: space-evenly;
+                padding: 4px;
+
+                span {
+                    margin: 2px;
+                }
 
                 .tech {
                     display: flex;
