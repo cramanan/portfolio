@@ -3,20 +3,6 @@ import React from "react";
 import Image from "next/image";
 
 import "./Stack.scss";
-import nextLogo from "../../assets/svgs/next.svg";
-import vercelLogo from "../../assets/svgs/vercel.svg";
-import htmlLogo from "../../assets/svgs/html.svg";
-import cssLogo from "../../assets/svgs/css.svg";
-import jsLogo from "../../assets/svgs/javascript.svg";
-import pythonLogo from "../../assets/svgs/python.svg";
-import sqliteLogo from "../../assets/svgs/sqlite.svg";
-import typescriptLogo from "../../assets/svgs/typescript.svg";
-import reactLogo from "../../assets/svgs/react.svg";
-import sassLogo from "../../assets/svgs/sass.svg";
-import gitLogo from "../../assets/svgs/git.svg";
-import dockerLogo from "../../assets/svgs/docker.svg";
-import golangLogo from "../../assets/svgs/golang.svg";
-import postgresLogo from "../../assets/svgs/postgres.svg";
 
 type Props = {
     title: string;
@@ -25,30 +11,30 @@ type Props = {
 
 const elements: Props[] = [
     [
-        { title: "Next.js", path: nextLogo },
-        { title: "Vercel", path: vercelLogo },
+        { title: "Next.js", path: "next" },
+        { title: "Vercel", path: "vercel" },
     ],
     [
-        { title: "Git", path: gitLogo },
-        { title: "Docker", path: dockerLogo },
+        { title: "Git", path: "git" },
+        { title: "Docker", path: "docker" },
     ],
     [
-        { title: "Golang", path: golangLogo },
-        { title: "PostgreSQL", path: postgresLogo },
+        { title: "Golang", path: "golang" },
+        { title: "PostgreSQL", path: "postgres" },
     ],
     [
-        { title: "React", path: reactLogo },
-        { title: "Sass", path: sassLogo },
-        { title: "TypeScript", path: typescriptLogo },
+        { title: "React", path: "react" },
+        { title: "Sass", path: "sass" },
+        { title: "TypeScript", path: "typescript" },
     ],
     [
-        { title: "Python", path: pythonLogo },
-        { title: "SQLite", path: sqliteLogo },
+        { title: "Python", path: "python" },
+        { title: "SQLite", path: "sqlite" },
     ],
     [
-        { title: "HTML", path: htmlLogo },
-        { title: "CSS", path: cssLogo },
-        { title: "JS", path: jsLogo },
+        { title: "HTML", path: "html" },
+        { title: "CSS", path: "css" },
+        { title: "JS", path: "javascript" },
     ],
 ];
 
@@ -60,7 +46,7 @@ function StackElement({ props }: { props: Props }) {
                     <div key={title} className="tech">
                         <span>{title}</span>
                         <Image
-                            src={path}
+                            src={`/svgs/${path}.svg`}
                             height={50}
                             width={50}
                             alt={`${title} logo`}
@@ -76,7 +62,7 @@ export default function TechStack() {
     const t = useTranslations("Tech-Stack");
     return (
         <>
-            <h2>{t("title")}</h2>
+            <h2 id="title">{t("title")}</h2>
             <div id="stack">
                 <ul>
                     {elements.map((elt, idx) => (
