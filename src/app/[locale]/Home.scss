@@ -1,6 +1,6 @@
 #face-card {
-    display: grid;
-    grid-template-columns: auto 1fr;
+    display: flex;
+    justify-content: space-evenly;
 
     #job {
         display: flex;
@@ -12,17 +12,17 @@
     }
 }
 
-#skills {
-    #head {
-        display: flex;
-        justify-content: space-between;
-        margin: 10px;
+.head {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
 
-        h2 {
-            font-size: 20px;
-        }
+    h2 {
+        font-size: 20px;
     }
+}
 
+#skills {
     ul {
         list-style-type: none;
         display: flex;

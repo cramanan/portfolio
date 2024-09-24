@@ -3,12 +3,13 @@
         "dev1": "Développeur",
         "dev2": "Full-Stack",
         "skills": "Compétences Techniques",
-        "More": "Voir plus"
+        "More": "Voir plus",
+        "Projects": "Projets"
     },
     "Tech-Stack": {
         "title": "Ma Stack Technique"
     },
     "LocaleSwitcher": {
-        "locale": "{locale, select, fr {🇫🇷 Français} en {🇺🇸 Anglais} other {Unknown}}"
+        "locale": "{locale, select, fr {🇫🇷} en {🇺🇸} other {Unknown}}"
     }
 }
