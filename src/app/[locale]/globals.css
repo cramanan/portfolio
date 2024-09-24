@@ -25,7 +25,6 @@ body {
     color: var(--foreground);
     background: var(--background);
     font-family: Asap;
-    padding: 20px;
 }
 
 * {

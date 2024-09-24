@@ -1,7 +1,7 @@
 import { Link } from "@/i18n/routing";
 import LocaleSwitcher from "./LocaleSwitcher";
 
-export function Header() {
+export default function Header() {
     return (
         <header>
             <h1>

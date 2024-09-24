@@ -11,5 +11,8 @@
     },
     "LocaleSwitcher": {
         "locale": "{locale, select, fr {🇫🇷} en {🇺🇸} other {Unknown}}"
+    },
+    "NotFoundPage": {
+        "title": "Page introuvable"
     }
 }

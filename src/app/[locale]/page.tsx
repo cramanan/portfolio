@@ -27,7 +27,7 @@ export default function Home() {
     const t = useTranslations("Home");
     return (
         <>
-            <section id="face-card">
+            <section id="face-card" className="sxn">
                 <div id="job">
                     <div>{t("dev1")}</div>
                     <div>{t("dev2")}</div>
@@ -39,7 +39,7 @@ export default function Home() {
                     alt="A picture of Cyril Ram."
                 />
             </section>
-            <section id="skills">
+            <section id="skills" className="sxn">
                 <div className="head">
                     <h2>{t("skills")}</h2>
                     <Link href="/tech-stack">{t("More")}</Link>
@@ -61,7 +61,7 @@ export default function Home() {
                     ))}
                 </ul>
             </section>
-            <section id="projects">
+            <section id="projects" className="sxn">
                 <div className="head">
                     <h2>{t("Projects")}</h2>
                     <Link href="/tech-stack">{t("More")}</Link>

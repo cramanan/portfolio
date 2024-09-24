@@ -1,3 +1,7 @@
+.sxn {
+    margin: 20px;
+}
+
 #face-card {
     display: flex;
     justify-content: space-evenly;
@@ -12,10 +16,14 @@
     }
 }
 
+header {
+    padding: 10px 10px;
+}
+
 .head {
     display: flex;
     justify-content: space-between;
-    margin: 10px;
+    margin-bottom: 10px;
 
     h2 {
         font-size: 20px;
@@ -26,12 +34,17 @@
     ul {
         list-style-type: none;
         display: flex;
-        justify-content: space-between;
+        justify-content: space-evenly;
 
         li {
             display: flex;
             flex-direction: column;
             align-items: center;
+            gap: 10px;
         }
     }
+}
+
+footer {
+    background-color: #151515;
 }
