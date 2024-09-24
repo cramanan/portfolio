@@ -4,9 +4,9 @@ import LocaleSwitcher from "./LocaleSwitcher";
 export default function Header() {
     return (
         <header>
-            <h1>
-                <Link href="/">Cyril Ram.</Link>
-            </h1>
+            <Link href="/">
+                <h1>Cyril Ram.</h1>
+            </Link>
             <LocaleSwitcher />
         </header>
     );

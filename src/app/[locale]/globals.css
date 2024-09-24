@@ -47,14 +47,7 @@ header a {
     text-decoration: none;
 }
 
-header nav {
-    display: none;
-}
-
 @media screen and (min-width: 744px) {
-    header nav {
-        display: flex;
-    }
 }
 
 header select {
@@ -64,6 +57,26 @@ header select {
     cursor: pointer;
     font-size: 16px;
     padding: 4px;
+}
+
+footer #contact {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: fit-content;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer #contact h3 {
+    margin: 10px;
+}
+
+footer #contact #socials {
+    margin: auto;
+    display: flex;
+    width: fit-content;
+    gap: 20px;
 }
 
 @media (prefers-color-scheme: dark) {

@@ -64,7 +64,6 @@ export default function Home() {
             <section id="projects" className="sxn">
                 <div className="head">
                     <h2>{t("Projects")}</h2>
-                    <Link href="/tech-stack">{t("More")}</Link>
                 </div>
                 <div className="project">
                     <div className="screen"></div>

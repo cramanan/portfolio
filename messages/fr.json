@@ -14,5 +14,8 @@
     },
     "NotFoundPage": {
         "title": "Page introuvable"
+    },
+    "Footer": {
+        "Contact": "Me contacter"
     }
 }
