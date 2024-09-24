@@ -3,15 +3,24 @@
     src: url("/fonts/Asap.ttf");
 }
 
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    /* transition: background-color 0.2s; */
+}
+
 :root {
     --background: #f2f2f2;
     --foreground: #252525;
+    --footer: #e7e7e7;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
         --background: #252525;
         --foreground: #f2f2f2;
+        --footer: #1a1a1a;
     }
 }
 
@@ -25,12 +34,6 @@ body {
     color: var(--foreground);
     background: var(--background);
     font-family: Asap;
-}
-
-* {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
 }
 
 a {
@@ -47,16 +50,35 @@ header a {
     text-decoration: none;
 }
 
-@media screen and (min-width: 744px) {
+header {
+    text-decoration: none;
 }
 
-header select {
+header #switchers {
+    display: flex;
+    gap: 10px;
+}
+
+header #switchers select {
     border: none;
     font-family: Asap;
     background: none;
     cursor: pointer;
     font-size: 16px;
     padding: 4px;
+    color: var(--foreground);
+}
+
+header #switchers #theme-switcher {
+    border: none;
+
+    cursor: pointer;
+
+    background: none;
+}
+
+footer {
+    background-color: var(--footer);
 }
 
 footer #contact {
@@ -79,10 +101,13 @@ footer #contact #socials {
     gap: 20px;
 }
 
-@media (prefers-color-scheme: dark) {
-    html {
-        color-scheme: dark;
-    }
+footer #copyrights {
+    width: fit-content;
+    margin: auto;
+    padding: 10px;
+}
+
+@media screen and (min-width: 744px) {
 }
 
 @media screen and (max-width: 744px) {

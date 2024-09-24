@@ -7,7 +7,9 @@ export default function Header() {
             <Link href="/">
                 <h1>Cyril Ram.</h1>
             </Link>
-            <LocaleSwitcher />
+            <div id="switchers">
+                <LocaleSwitcher />
+            </div>
         </header>
     );
 }
