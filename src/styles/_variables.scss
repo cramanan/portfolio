@@ -1,0 +1,35 @@
+:root {
+    --background: #f2f2f2;
+    --foreground: #252525;
+    --footer: #e7e7e7;
+}
+
+[data-theme="dark"]:root {
+    --background: #252525;
+    --foreground: #f2f2f2;
+    --footer: #1a1a1a;
+}
+
+@mixin mobile {
+    @media screen and (width <= 600px) {
+        @content;
+    }
+}
+
+@mixin mobile-tablet {
+    @media screen and (width <= 744px) {
+        @content;
+    }
+}
+
+@mixin tablet-desktop {
+    @media screen and (width > 600px) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media screen and (width > 744px) {
+        @content;
+    }
+}

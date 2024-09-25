@@ -1,7 +1,7 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { Link } from "@/i18n/routing";
-import "./Home.scss";
+import "./page.scss";
 
 const svgs = [
     {
@@ -26,19 +26,19 @@ export default function Home() {
     const t = useTranslations("Home");
     return (
         <>
-            <section id="face-card" className="sxn">
-                <div id="job">
+            <section id="face-sxn">
+                <div id="face-txt">
                     <div>{t("dev1")}</div>
                     <div>{t("dev2")}</div>
                 </div>
                 <Image
-                    width={140}
-                    height={140}
+                    width={300}
+                    height={300}
                     src="/picture.webp"
                     alt="A picture of Cyril Ram."
                 />
             </section>
-            <section id="skills" className="sxn">
+            <section id="skills">
                 <div className="head">
                     <h2>{t("skills")}</h2>
                     <Link href="/tech-stack">{t("More")}</Link>
@@ -60,7 +60,7 @@ export default function Home() {
                     ))}
                 </ul>
             </section>
-            <section id="projects" className="sxn">
+            <section className="sxn">
                 <div className="head">
                     <h2>{t("Projects")}</h2>
                 </div>

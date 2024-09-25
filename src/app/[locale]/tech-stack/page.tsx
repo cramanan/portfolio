@@ -2,8 +2,6 @@ import { useTranslations } from "next-intl";
 import React from "react";
 import Image from "next/image";
 
-import "./Stack.scss";
-
 type Props = {
     title: string;
     path: string;
@@ -14,10 +12,7 @@ const elements: Props[] = [
         { title: "Next.js", path: "next" },
         { title: "Vercel", path: "vercel" },
     ],
-    [
-        { title: "Git", path: "git" },
-        { title: "Docker", path: "docker" },
-    ],
+
     [
         { title: "Golang", path: "golang" },
         { title: "PostgreSQL", path: "postgres" },
@@ -29,19 +24,19 @@ const elements: Props[] = [
     ],
     [
         { title: "Python", path: "python" },
-        { title: "SQLite", path: "sqlite" },
+        // { title: "SQLite", path: "sqlite" },
     ],
-    [
-        { title: "HTML", path: "html" },
-        { title: "CSS", path: "css" },
-        { title: "JS", path: "javascript" },
-    ],
+    // [
+    //     { title: "HTML", path: "html" },
+    //     { title: "CSS", path: "css" },
+    //     { title: "JS", path: "javascript" },
+    // ],
 ];
 
 function StackElement({ props }: { props: Props }) {
     return (
         <li>
-            <div className="stack-element">
+            <div>
                 {props.map(({ title, path }) => (
                     <div key={title} className="tech">
                         <span>{title}</span>
@@ -62,8 +57,8 @@ export default function TechStack() {
     const t = useTranslations("Tech-Stack");
     return (
         <>
-            <h2 id="title">{t("title")}</h2>
-            <div id="stack">
+            <h2>{t("title")}</h2>
+            <div>
                 <ul>
                     {elements.map((elt, idx) => (
                         <StackElement key={idx} props={elt} />

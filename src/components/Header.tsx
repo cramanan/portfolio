@@ -4,13 +4,15 @@ import ThemeSwitcher from "./ThemeSwitcher";
 
 export default function Header() {
     return (
-        <header>
-            <Link href="/">
-                <h1>Cyril Ram.</h1>
-            </Link>
-            <div id="switchers">
-                <ThemeSwitcher />
-                <LocaleSwitcher />
+        <header id="main-header">
+            <div className="layout-container">
+                <Link href="/">
+                    <h1>Cyril Ram.</h1>
+                </Link>
+                <div id="switchers">
+                    <ThemeSwitcher />
+                    <LocaleSwitcher />
+                </div>
             </div>
         </header>
     );

@@ -24,26 +24,28 @@ export default function Footer() {
     const t = useTranslations("Footer");
 
     return (
-        <footer>
-            <div id="contact">
-                <h3>{t("Contact")}</h3>
+        <footer id="main-footer">
+            <div className="layout-container">
                 <div id="socials">
-                    {socials.map(({ title, d, href }) => (
-                        <Link href={href} key={title} target="_blank">
-                            <svg
-                                role="img"
-                                viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg"
-                                width={40}
-                            >
-                                <title>{title}</title>
-                                <path d={d} fill="var(--foreground)" />
-                            </svg>
-                        </Link>
-                    ))}
+                    <h3>{t("Contact")}</h3>
+                    <div id="networks">
+                        {socials.map(({ title, d, href }) => (
+                            <Link href={href} key={title} target="_blank">
+                                <svg
+                                    role="img"
+                                    viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width={40}
+                                >
+                                    <title>{title}</title>
+                                    <path d={d} fill="var(--foreground)" />
+                                </svg>
+                            </Link>
+                        ))}
+                    </div>
                 </div>
+                <div id="copyrights">Copyright © 2024 | All Right Reserved</div>
             </div>
-            <div id="copyrights">Copyright © 2024 | All Right Reserved</div>
         </footer>
     );
 }

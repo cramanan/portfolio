@@ -36,6 +36,7 @@ export default function LocaleSwitcherSelect({
             defaultValue={defaultValue}
             disabled={isPending}
             onChange={onSelectChange}
+            id="locale-switcher"
         >
             {children}
         </select>
