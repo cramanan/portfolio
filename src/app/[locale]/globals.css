@@ -7,7 +7,7 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    /* transition: background-color 0.2s; */
+    transition: background-color 0.2s;
 }
 
 :root {
@@ -16,12 +16,10 @@
     --footer: #e7e7e7;
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        --background: #252525;
-        --foreground: #f2f2f2;
-        --footer: #1a1a1a;
-    }
+[data-theme="dark"] {
+    --background: #252525;
+    --foreground: #f2f2f2;
+    --footer: #1a1a1a;
 }
 
 html,
@@ -56,6 +54,7 @@ header {
 
 header #switchers {
     display: flex;
+    align-items: center;
     gap: 10px;
 }
 
@@ -65,15 +64,12 @@ header #switchers select {
     background: none;
     cursor: pointer;
     font-size: 16px;
-    padding: 4px;
     color: var(--foreground);
 }
 
 header #switchers #theme-switcher {
     border: none;
-
     cursor: pointer;
-
     background: none;
 }
 
