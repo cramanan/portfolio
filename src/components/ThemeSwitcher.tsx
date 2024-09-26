@@ -5,12 +5,9 @@ import { useEffect, useState } from "react";
 
 export default function ThemeSwitcher() {
     const [mount, setMount] = useState(false);
-    const { theme, setTheme, systemTheme } = useTheme();
+    const { theme, setTheme } = useTheme();
 
-    useEffect(() => {
-        setMount(true);
-        systemTheme && setTheme(systemTheme);
-    }, []);
+    useEffect(() => setMount(true), []);
 
     return mount ? (
         <button

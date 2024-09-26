@@ -1,7 +1,9 @@
+"use client";
+
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { Link } from "@/i18n/routing";
 import "./page.scss";
+import Header from "@/components/Header";
 
 const svgs = [
     {
@@ -24,24 +26,25 @@ const svgs = [
 
 export default function Home() {
     const t = useTranslations("Home");
+
     return (
         <>
             <section id="face-sxn">
                 <div id="face-txt">
-                    <div>{t("dev1")}</div>
-                    <div>{t("dev2")}</div>
+                    <div id="dev1">{t("dev1")}</div>
+                    <div id="dev2">{t("dev2")}</div>
                 </div>
                 <Image
-                    width={300}
-                    height={300}
                     src="/picture.webp"
-                    alt="A picture of Cyril Ram."
+                    alt="Picture of me"
+                    width={400}
+                    height={400}
+                    id="picture"
                 />
             </section>
             <section id="skills">
                 <div className="head">
                     <h2>{t("skills")}</h2>
-                    <Link href="/tech-stack">{t("More")}</Link>
                 </div>
                 <ul>
                     {svgs.map(({ title, path }) => (
@@ -60,7 +63,7 @@ export default function Home() {
                     ))}
                 </ul>
             </section>
-            <section className="sxn">
+            <section id="projects">
                 <div className="head">
                     <h2>{t("Projects")}</h2>
                 </div>
