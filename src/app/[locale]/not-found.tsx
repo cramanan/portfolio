@@ -1,6 +1,5 @@
 import { useTranslations } from "next-intl";
 import "./not-found.scss";
-import Header from "@/components/Header";
 
 export default function NotFoundPage() {
     const t = useTranslations("NotFoundPage");

@@ -3,7 +3,6 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import "./page.scss";
-import Header from "@/components/Header";
 
 const svgs = [
     {
