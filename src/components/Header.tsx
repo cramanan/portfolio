@@ -1,9 +1,10 @@
 "use client";
 
-import { Link, usePathname } from "@/i18n/routing";
+import { Link as LocaleLink, usePathname } from "@/i18n/routing";
 import LocaleSwitcher from "./LocaleSwitcher";
 import ThemeSwitcher from "./ThemeSwitcher";
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 
 export default function Header() {
     const t = useTranslations("Home");
@@ -12,12 +13,14 @@ export default function Header() {
     return (
         <header id="main-header">
             <div id="container">
-                <Link href="/">
+                <LocaleLink href="/">
                     <h1>Cyril Ram.</h1>
-                </Link>
+                </LocaleLink>
                 {pathname === "/" && (
                     <nav id="navbar">
-                        <a href="#projects">{t("Projects")}</a>
+                        <Link href="#home">{t("home")}</Link>
+                        <Link href="#skills">{t("skills")}</Link>
+                        <Link href="#projects">{t("Projects")}</Link>
                     </nav>
                 )}
                 <div id="switchers">

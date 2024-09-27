@@ -13,8 +13,8 @@
 }
 
 .sxn {
-    max-width: 1200px;
-    margin: auto;
+    padding-top: var(--header-height);
+    height: 100dvh;
 }
 
 html,
@@ -49,6 +49,11 @@ body {
         align-items: center;
         max-width: 1440px;
         margin: auto;
+
+        #navbar {
+            display: flex;
+            gap: 10px;
+        }
     }
 
     #switchers {

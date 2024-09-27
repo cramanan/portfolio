@@ -2,12 +2,10 @@
     "Home": {
         "dev1": "Développeur",
         "dev2": "Full-Stack",
-        "skills": "Compétences Techniques",
+        "home": "Accueil",
+        "skills": "Compétences",
         "More": "Voir plus",
         "Projects": "Projets"
-    },
-    "Tech-Stack": {
-        "title": "Ma Stack Technique"
     },
     "LocaleSwitcher": {
         "locale": "{locale, select, fr {🇫🇷} en {🇺🇸} other {Unknown}}"

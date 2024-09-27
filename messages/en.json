@@ -2,7 +2,8 @@
     "Home": {
         "dev1": "Full-Stack",
         "dev2": "Developer",
-        "skills": "Technical Skills",
+        "home": "Home",
+        "skills": "Skills",
         "More": "See more",
         "Projects": "Projects"
     },

@@ -1,5 +1,55 @@
 @import "@/styles/variables";
 
-#face-sxn {
-    margin-top: var(--header-height);
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+.sxn {
+    height: 100dvh;
+}
+
+#home {
+    display: flex;
+    padding-top: 0;
+    align-items: center;
+    justify-content: space-evenly;
+
+    #face-txt {
+        width: 500px;
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 600;
+        }
+
+        p {
+            margin-top: 6px;
+            font-size: 1.5rem;
+        }
+    }
+
+    #picture {
+        img {
+            --size: 400px;
+            width: var(--size);
+            height: var(--size);
+
+            border-radius: 50%;
+        }
+        h1 {
+            padding: 10px;
+            font-size: 2.5rem;
+            width: fit-content;
+            margin: auto;
+        }
+    }
+}
+
+#back-to-top {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--primary-foreground);
 }
