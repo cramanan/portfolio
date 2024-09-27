@@ -11,7 +11,7 @@ export default function Header() {
 
     return (
         <header id="main-header">
-            <div className="layout-container">
+            <div id="container">
                 <Link href="/">
                     <h1>Cyril Ram.</h1>
                 </Link>

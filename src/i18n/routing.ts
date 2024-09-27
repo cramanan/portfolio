@@ -12,5 +12,5 @@ export const routing = defineRouting({
 export type Pathnames = keyof typeof routing.pathnames;
 export type Locale = (typeof routing.locales)[number];
 
-export const { Link, getPathname, redirect, usePathname, useRouter } =
+export const { Link, redirect, usePathname, useRouter } =
     createLocalizedPathnamesNavigation(routing);

@@ -1,32 +1,5 @@
 @import "@/styles/variables";
 
 #face-sxn {
-    max-width: 1200px;
-    margin: auto;
-    height: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    @include mobile {
-        justify-content: space-evenly;
-        height: 320px;
-    }
-
-    #face-txt {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        font-size: 50px;
-    }
-
-    #picture {
-        border-radius: 50%;
-        // border: solid red;
-        // padding: 2px;
-        @include mobile {
-            width: 140px;
-            height: 140px;
-        }
-    }
+    margin-top: var(--header-height);
 }

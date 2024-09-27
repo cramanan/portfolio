@@ -9,91 +9,56 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    color: var(--foreground);
-    transition: background-color 0.3s;
+    color: var(--primary-foreground);
+}
+
+.sxn {
+    max-width: 1200px;
+    margin: auto;
 }
 
 html,
 body {
     max-width: 100dvw;
     overflow-x: hidden;
+    scroll-behavior: smooth;
+    transition: background-color 0.3s;
 }
 
 body {
-    color: var(--foreground);
+    color: var(--primary-foreground);
     background: var(--background);
     font-family: Asap;
 }
 
 #main-header {
-    border-bottom: solid 1px var(--foreground);
-    padding: 10px;
+    position: fixed;
+    width: 100%;
+    height: var(--header-height);
+    background-color: inherit;
+    border-bottom: solid 2px var(--primary-foreground);
 
     a {
         text-decoration: none;
-        color: var(--foreground);
-
-        h1 {
-            font-weight: 600;
-        }
     }
 
-    #navbar {
-        display: block;
-        font-size: 20px;
-        @include mobile {
-            display: none;
-        }
-    }
-
-    .layout-container {
+    #container {
         display: flex;
+        height: 100%;
         justify-content: space-between;
         align-items: center;
-        margin: auto;
         max-width: 1440px;
-
-        #switchers {
-            display: flex;
-            column-gap: 10px;
-
-            #theme-switcher {
-                background: none;
-                border: none;
-                width: 20px;
-            }
-
-            #locale-switcher {
-                background: none;
-                border: none;
-                font-size: 20px;
-            }
-        }
+        margin: auto;
     }
-}
 
-#main-footer {
-    border-top: solid 1px var(--foreground);
+    #switchers {
+        display: flex;
+        gap: 10px;
 
-    .layout-container {
-        max-width: 1440px;
-        margin: auto;
-
-        #socials {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-
-            #networks {
-                display: flex;
-                gap: 20px;
-            }
-        }
-
-        #copyrights {
-            text-align: center;
-            padding: 10px;
+        * {
+            border: none;
+            background-color: transparent;
+            font-size: 20px;
         }
     }
 }

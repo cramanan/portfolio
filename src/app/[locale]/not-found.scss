@@ -1,7 +1,4 @@
 #error-container {
+    margin-top: var(--header-height);
     height: 100dvh;
-    h1 {
-        max-width: fit-content;
-        margin: 50dvh auto;
-    }
 }

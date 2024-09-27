@@ -17,7 +17,7 @@ export default function ThemeSwitcher() {
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
-                fill="var(--foreground)"
+                fill="var(--primary-foreground)"
                 width={20}
             >
                 <path

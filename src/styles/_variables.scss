@@ -1,35 +1,40 @@
 :root {
     --background: #f2f2f2;
-    --foreground: #252525;
+    --primary-foreground: #252525;
+    // --secondary-foreground: #3993dd;
+
     --footer: #e7e7e7;
+
+    --header-height: 60px;
 }
 
 [data-theme="dark"]:root {
     --background: #252525;
-    --foreground: #f2f2f2;
+    --primary-foreground: #f2f2f2;
+
     --footer: #1a1a1a;
 }
 
 @mixin mobile {
-    @media screen and (width <= 600px) {
+    @media screen and (width <= 425px) {
         @content;
     }
 }
 
 @mixin mobile-tablet {
-    @media screen and (width <= 744px) {
+    @media screen and (width <= 768px) {
         @content;
     }
 }
 
 @mixin tablet-desktop {
-    @media screen and (width > 600px) {
+    @media screen and (width > 1024px) {
         @content;
     }
 }
 
 @mixin desktop {
-    @media screen and (width > 744px) {
+    @media screen and (width > 1440px) {
         @content;
     }
 }

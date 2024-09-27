@@ -25,13 +25,13 @@ const svgs = [
 
 export default function Home() {
     const t = useTranslations("Home");
-
     return (
         <>
-            <section id="face-sxn">
+            <section id="face-sxn" className="sxn">
                 <div id="face-txt">
-                    <div id="dev1">{t("dev1")}</div>
-                    <div id="dev2">{t("dev2")}</div>
+                    <h1>Cyril Ram.</h1>
+                    <h2 id="dev1">{t("dev1")}</h2>
+                    <h2 id="dev2">{t("dev2")}</h2>
                 </div>
                 <Image
                     src="/picture.webp"
@@ -42,7 +42,7 @@ export default function Home() {
                 />
             </section>
             <section id="skills">
-                <div className="head">
+                <div id="head">
                     <h2>{t("skills")}</h2>
                 </div>
                 <ul>
@@ -55,7 +55,10 @@ export default function Home() {
                                 height={50}
                             >
                                 <title>{title}</title>
-                                <path d={path} fill="var(--foreground)" />
+                                <path
+                                    d={path}
+                                    fill="var(--primary-foreground)"
+                                />
                             </svg>
                             <div>{title}</div>
                         </li>

@@ -17,9 +17,11 @@ export default function LocaleSwitcherSelect({
     const pathname = usePathname();
 
     function onSelectChange(event: ChangeEvent<HTMLSelectElement>) {
-        const nextLocale = event.target.value as Locale;
+        console.log(window.location.hash);
+
+        const locale = event.target.value as Locale;
         startTransition(() => {
-            router.replace({ pathname }, { locale: nextLocale });
+            router.replace({ pathname }, { locale });
         });
     }
 
