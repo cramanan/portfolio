@@ -1,44 +1,45 @@
-@import "./variables";
-
-@font-face {
-    font-family: Asap;
-    src: url("/fonts/Asap.ttf");
-}
-
-* {
-    box-sizing: border-box;
-    padding: 0;
+*,
+*::before,
+*::after {
     margin: 0;
-    color: var(--primary-foreground);
+    padding: 0;
+    box-sizing: content-box;
+    transition: background-color 0.3s;
 }
 
-.sxn {
-    padding-top: var(--header-height);
-    height: 100dvh;
+:root {
+    --background: #f2f2f2;
+    --foreground: #252525;
+    --header-height: 60px;
+}
+
+[data-theme="dark"]:root {
+    --background: #252525;
+    --foreground: #f2f2f2;
 }
 
 html,
 body {
-    max-width: 100dvw;
+    max-width: 100vw;
     overflow-x: hidden;
+}
+
+html {
     scroll-behavior: smooth;
-    transition: background-color 0.3s;
 }
 
 body {
-    color: var(--primary-foreground);
-    background: var(--background);
-    font-family: Asap;
+    color: var(--foreground);
+    background-color: var(--background);
 }
 
 #main-header {
     position: fixed;
     width: 100%;
     height: var(--header-height);
-    background-color: inherit;
-    border-bottom: solid 2px var(--primary-foreground);
 
     a {
+        color: var(--foreground);
         text-decoration: none;
     }
 
