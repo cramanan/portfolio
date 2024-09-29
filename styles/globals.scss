@@ -1,3 +1,5 @@
+@import "./mixins";
+
 *,
 *::before,
 *::after {
@@ -67,4 +69,23 @@ body {
             font-size: 20px;
         }
     }
+}
+
+.sxn {
+    height: 100dvh;
+
+    .title {
+        height: var(--header-height);
+    }
+}
+
+#home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
 }

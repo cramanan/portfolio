@@ -18,7 +18,7 @@ export default function Layout({ children }: { children: ReactNode }) {
                     {pathname === "/" && (
                         <nav id="navbar">
                             <Link href="#home">{t("home")}</Link>
-                            <Link href="#skills">{t("skills")}</Link>
+                            <Link href="#skills">{t("skills.title")}</Link>
                             <Link href="#projects">{t("Projects")}</Link>
                         </nav>
                     )}
@@ -37,7 +37,7 @@ export default function Layout({ children }: { children: ReactNode }) {
             </header>
             <main className={asap.className}>{children}</main>
             <footer id="main-footer" className={asap.className}>
-                <div id="copyrights">Copyright © 2024 | All Right Reserved</div>
+                <div id="copyrights">Cyril Ram. © 2024 | {t("copyrights")}</div>
             </footer>
         </ThemeProvider>
     );
