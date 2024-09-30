@@ -113,6 +113,40 @@ body {
     }
 }
 
+#skills {
+    display: flex;
+    flex-direction: column;
+
+    .content {
+        display: flex;
+        background-color: red;
+
+        .illustrations {
+            width: 100px;
+            height: 100px;
+            border: dashed pink;
+        }
+
+        &#backend {
+            flex-direction: row-reverse;
+        }
+
+        .description {
+            .techs {
+                list-style-type: none;
+                display: flex;
+                gap: 6px;
+
+                li {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+            }
+        }
+    }
+}
+
 footer {
     text-align: center;
     padding: 10px;
