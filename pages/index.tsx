@@ -5,6 +5,7 @@ import Image from "next/image";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { GetStaticProps } from "next";
 import { useTranslation } from "next-i18next";
+import Contact from "@/components/Contact";
 
 type Tech = { title: string; src: string };
 
@@ -78,7 +79,7 @@ function Techs({ techs }: { techs: Tech[] }) {
                         width={40}
                         height={40}
                         loading="lazy"
-                        src={`/svgs/${src}`}
+                        src={`/images/svgs/${src}`}
                     />
                     <span>{title}</span>
                 </li>
@@ -133,7 +134,7 @@ export default function Home() {
                 </div>
                 <div id="picture">
                     <Image
-                        src="/picture.webp"
+                        src="/images/picture.webp"
                         alt="Picture of me"
                         width={400}
                         height={400}
@@ -177,6 +178,7 @@ export default function Home() {
             </section>
             <section id="contact" className="sxn">
                 <h2 className="title">{t("contact")}</h2>
+                <Contact />
             </section>
         </Layout>
     );
