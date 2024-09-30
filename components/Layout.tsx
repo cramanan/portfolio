@@ -1,15 +1,17 @@
 import Link from "next/link";
-import { ReactNode } from "react";
+import { ChangeEvent, ReactNode, useEffect, useState } from "react";
 import { useTranslation } from "next-i18next";
 import ThemeSwitcher from "./ThemeSwitcher";
 import { ThemeProvider } from "next-themes";
 import { usePathname } from "next/navigation";
 import { Asap } from "next/font/google";
+
 const asap = Asap({ subsets: ["latin"] });
 
 export default function Layout({ children }: { children: ReactNode }) {
     const { t, i18n } = useTranslation();
     const pathname = usePathname();
+
     return (
         <ThemeProvider>
             <header id="main-header" className={asap.className}>
@@ -19,7 +21,8 @@ export default function Layout({ children }: { children: ReactNode }) {
                         <nav id="navbar">
                             <Link href="#home">{t("home")}</Link>
                             <Link href="#skills">{t("skills.title")}</Link>
-                            <Link href="#projects">{t("Projects")}</Link>
+                            <Link href="#projects">{t("projects")}</Link>
+                            <Link href="#contact">{t("contact")}</Link>
                         </nav>
                     )}
                     <div id="switchers">

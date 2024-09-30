@@ -67,6 +67,7 @@ body {
             border: none;
             background-color: transparent;
             font-size: 20px;
+            outline: none;
         }
     }
 }
@@ -75,7 +76,7 @@ body {
     height: 100dvh;
 
     .title {
-        height: var(--header-height);
+        padding-top: var(--header-height);
     }
 }
 
@@ -83,6 +84,33 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    @include mobile {
+        flex-direction: column-reverse;
+    }
+
+    #picture {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        img {
+            border-radius: 50%;
+        }
+
+        h1 {
+            padding-top: 10px;
+            font-size: 32px;
+        }
+    }
+    #face-txt {
+        width: 40dvw;
+
+        #socials {
+            display: flex;
+            list-style-type: none;
+            gap: 10px;
+        }
+    }
 }
 
 footer {
