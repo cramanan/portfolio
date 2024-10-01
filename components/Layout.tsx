@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ReactNode, useState } from "react";
+import { ReactNode, useEffect, useState, useTransition } from "react";
 import { useTranslation } from "next-i18next";
 import ThemeSwitcher from "./ThemeSwitcher";
 import { ThemeProvider } from "next-themes";
@@ -31,12 +31,6 @@ export default function Layout({ children }: { children: ReactNode }) {
         },
     ];
 
-    const [id, setId] = useState(1);
-    const onClick = () => {
-        if (id === links.length - 1) setId(0);
-        else setId((id) => id + 1);
-    };
-
     return (
         <ThemeProvider>
             <header id="main-header" className={asap.className}>
@@ -64,13 +58,6 @@ export default function Layout({ children }: { children: ReactNode }) {
             </header>
             <main className={asap.className}>{children}</main>
             <footer id="main-footer" className={asap.className}>
-                {pathname === "/" && (
-                    <a
-                        {...links[id]}
-                        onClick={onClick}
-                        style={{ position: "fixed", bottom: 0 }}
-                    />
-                )}
                 <div id="copyrights">Cyril Ram. © 2024 | {t("copyrights")}</div>
             </footer>
         </ThemeProvider>

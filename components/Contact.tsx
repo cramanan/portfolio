@@ -1,12 +1,20 @@
 "use client";
 
+import { z, ZodType } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm, SubmitHandler } from "react-hook-form";
 
-type Inputs = {
+export type ContactFormData = {
     name: string;
     email: string;
     message: string;
 };
+
+const mailSchema: ZodType<ContactFormData> = z.object({
+    name: z.string({ required_error: "Name is required." }),
+    email: z.string({ required_error: "Email is required." }).email(),
+    message: z.string({ required_error: "Message is required." }),
+});
 
 export default function Contact() {
     const {
@@ -15,9 +23,11 @@ export default function Contact() {
         formState: { errors },
         reset,
         setError,
-    } = useForm<Inputs>();
+    } = useForm<ContactFormData>({
+        resolver: zodResolver(mailSchema),
+    });
 
-    const onSubmit: SubmitHandler<Inputs> = (data) => {
+    const onSubmit: SubmitHandler<ContactFormData> = (data) => {
         fetch("/api/contact", {
             method: "POST",
             body: JSON.stringify(data),
@@ -46,6 +56,7 @@ export default function Contact() {
             <label htmlFor="email">Email</label>
             <input
                 id="email"
+                type="email"
                 {...register("email", { required: true })}
                 // required
             />
