@@ -33,7 +33,10 @@ export default function Contact() {
             body: JSON.stringify(data),
         })
             .then((resp) => {
-                if (!resp.ok) return setError("root", { message: "Error" });
+                if (!resp.ok)
+                    return setError("root", {
+                        message: "Error sending an email, try again later.",
+                    });
                 reset();
                 return resp.json();
             })
