@@ -89,19 +89,9 @@ body {
     }
 
     #picture {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        img {
-            border-radius: 50%;
-        }
-
-        h1 {
-            padding-top: 10px;
-            font-size: 32px;
-        }
+        border-radius: 50%;
     }
+
     #face-txt {
         width: 40dvw;
 

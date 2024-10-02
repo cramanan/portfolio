@@ -1,11 +1,14 @@
 import Head from "next/head";
-import Layout from "@/components/Layout";
 import Image from "next/image";
+import ThemeSwitcher from "@/components/ThemeSwitcher";
+import Contact from "@/components/Contact";
 
+import { useTranslation } from "next-i18next";
+import { ThemeProvider } from "next-themes";
+import { useEffect } from "react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { GetStaticProps } from "next";
-import { useTranslation } from "next-i18next";
-import Contact from "@/components/Contact";
+import { Asap } from "next/font/google";
 
 type Tech = { title: string; src: string };
 
@@ -88,11 +91,23 @@ function Techs({ techs }: { techs: Tech[] }) {
     );
 }
 
+const asap = Asap({ subsets: ["latin"] });
+
+const localeKey = "lang";
+
 export default function Home() {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
+
+    useEffect(() => {
+        i18n.changeLanguage(localStorage.getItem(localeKey) ?? "fr");
+    }, [i18n]);
+
+    useEffect(() => {
+        localStorage.setItem(localeKey, i18n.language);
+    }, [i18n.language]);
 
     return (
-        <Layout>
+        <ThemeProvider>
             <Head>
                 <title>Cyril Ram.</title>
                 <meta
@@ -105,9 +120,35 @@ export default function Home() {
                 />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <section id="home" className="sxn">
+            <header id="main-header" className={asap.className}>
+                <div id="container">
+                    <span></span>
+                    <nav>
+                        <a href="#home">{t("home")}</a>
+                        <a href="#skills">{t("skills.title")}</a>
+                        <a href="#projects">{t("projects")}</a>
+                        <a href="#projects">{t("contact")}</a>
+                    </nav>
+                    <div id="switchers">
+                        <ThemeSwitcher />
+                        <select
+                            onChange={(e) =>
+                                i18n.changeLanguage(e.target.value)
+                            }
+                            value={i18n.language}
+                        >
+                            <option value="fr">🇫🇷</option>
+                            <option value="en">🇺🇸</option>
+                        </select>
+                    </div>
+                </div>
+            </header>
+            <section id="home" className={`sxn ${asap.className}`}>
                 <div id="face-txt">
                     <h1>Cyril Ram.</h1>
+                    <h1 id="dev">
+                        {t("dev1")} {t("dev2")}
+                    </h1>
                     <p id="desc">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Donec vitae lectus ut est congue interdum. Cras finibus
@@ -132,20 +173,16 @@ export default function Home() {
                         ))}
                     </ul>
                 </div>
-                <div id="picture">
-                    <Image
-                        src="/images/picture.webp"
-                        alt="Picture of me"
-                        width={400}
-                        height={400}
-                        priority
-                    />
-                    <h1 id="dev">
-                        {t("dev1")} {t("dev2")}
-                    </h1>
-                </div>
+                <Image
+                    id="picture"
+                    src="/images/picture.webp"
+                    alt="Picture of me"
+                    width={400}
+                    height={400}
+                    priority
+                />
             </section>
-            <section id="skills" className="sxn">
+            <section id="skills" className={`sxn ${asap.className}`}>
                 <h2 className="title">{t("skills.title")}</h2>
                 <p>{t("skills.description")}</p>
                 {Object.keys(techs).map((tech, idx) => (
@@ -161,7 +198,7 @@ export default function Home() {
                     </div>
                 ))}
             </section>
-            <section id="projects" className="sxn">
+            <section id="projects" className={`sxn ${asap.className}`}>
                 <h2 className="title">{t("Projects")}</h2>
                 <div className="project">
                     <div className="screen"></div>
@@ -180,7 +217,10 @@ export default function Home() {
                 <h2 className="title">{t("contact")}</h2>
                 <Contact />
             </section>
-        </Layout>
+            <footer className={asap.className}>
+                <div id="copyrights">Cyril Ram. © 2024 | {t("copyrights")}</div>
+            </footer>
+        </ThemeProvider>
     );
 }
 
