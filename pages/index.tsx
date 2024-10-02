@@ -123,11 +123,11 @@ export default function Home() {
             <header id="main-header" className={asap.className}>
                 <div id="container">
                     <span></span>
-                    <nav>
-                        <a href="#home">{t("home")}</a>
+                    <nav id="navbar">
+                        <a href="#">{t("home")}</a>
                         <a href="#skills">{t("skills.title")}</a>
                         <a href="#projects">{t("projects")}</a>
-                        <a href="#projects">{t("contact")}</a>
+                        <a href="#contact">{t("contact")}</a>
                     </nav>
                     <div id="switchers">
                         <ThemeSwitcher />
@@ -189,10 +189,18 @@ export default function Home() {
                     <div className="content" id={tech} key={idx}>
                         <div className="illustrations">{/* slideshow */}</div>
                         <div className="description">
-                            <div>
-                                <h3>{t(`${tech}.title`)}</h3>
-                                <p>{t(`${tech}.description`)}</p>
-                            </div>
+                            <h3>{t(`${tech}.title`)}</h3>
+                            <p>
+                                {/* {t(`${tech}.description`)} */}
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit. Ut ut eros nulla. Fusce
+                                ultricies aliquam erat in consequat. Ut placerat
+                                libero sed augue maximus ultrices. Vestibulum
+                                vitae purus sit amet purus interdum ultrices in
+                                non mauris. Aliquam sed metus eget nulla luctus
+                                vulputate quis et eros. Sed quis consequat arcu,
+                                et posuere lectus.
+                            </p>
                             <Techs techs={techs[tech]} />
                         </div>
                     </div>

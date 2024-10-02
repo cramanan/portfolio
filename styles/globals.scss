@@ -103,6 +103,24 @@ body {
     }
 }
 
+#skills {
+    .content {
+        .description {
+            ul.techs {
+                display: flex;
+                list-style-type: none;
+
+                li {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 4px;
+                }
+            }
+        }
+    }
+}
+
 #contact-form {
     display: flex;
     flex-direction: column;
