@@ -1,4 +1,4 @@
-@import "./mixins";
+@use "./mixins";
 
 *,
 *::before,
@@ -88,7 +88,7 @@ body {
     justify-content: center;
     position: relative;
 
-    @include mobile {
+    @include mixins.mobile {
         flex-direction: column-reverse;
     }
 
@@ -113,6 +113,7 @@ body {
             ul.techs {
                 display: flex;
                 list-style-type: none;
+                gap: 10px;
 
                 li {
                     display: flex;

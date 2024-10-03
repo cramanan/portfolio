@@ -102,9 +102,10 @@ export default function Home() {
         i18n.changeLanguage(localStorage.getItem(localeKey) ?? "fr");
     }, [i18n]);
 
-    useEffect(() => {
-        localStorage.setItem(localeKey, i18n.language);
-    }, [i18n.language]);
+    useEffect(
+        () => localStorage.setItem(localeKey, i18n.language),
+        [i18n.language]
+    );
 
     return (
         <ThemeProvider>
@@ -187,20 +188,9 @@ export default function Home() {
                 <p>{t("skills.description")}</p>
                 {Object.keys(techs).map((tech, idx) => (
                     <div className="content" id={tech} key={idx}>
-                        <div className="illustrations">{/* slideshow */}</div>
                         <div className="description">
                             <h3>{t(`${tech}.title`)}</h3>
-                            <p>
-                                {/* {t(`${tech}.description`)} */}
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit. Ut ut eros nulla. Fusce
-                                ultricies aliquam erat in consequat. Ut placerat
-                                libero sed augue maximus ultrices. Vestibulum
-                                vitae purus sit amet purus interdum ultrices in
-                                non mauris. Aliquam sed metus eget nulla luctus
-                                vulputate quis et eros. Sed quis consequat arcu,
-                                et posuere lectus.
-                            </p>
+                            <p>{t(`${tech}.description`)}</p>
                             <Techs techs={techs[tech]} />
                         </div>
                     </div>
