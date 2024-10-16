@@ -45,7 +45,7 @@ export default function Contact() {
     };
 
     return (
-        <form id="contact-form" onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={handleSubmit(onSubmit)}>
             <span>{errors.root?.message}</span>
 
             <label htmlFor="name">Name</label>

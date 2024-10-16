@@ -8,7 +8,7 @@ import { ThemeProvider } from "next-themes";
 import { useEffect } from "react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { GetStaticProps } from "next";
-import { Asap } from "next/font/google";
+// import { Asap } from "next/font/google";
 
 type Tech = { title: string; src: string };
 
@@ -34,8 +34,8 @@ const techs: {
             src: "react.svg",
         },
         {
-            title: "SASS",
-            src: "sass.svg",
+            title: "Tailwind",
+            src: "tailwind.svg",
         },
         {
             title: "TypeScript",
@@ -74,7 +74,7 @@ const techs: {
 
 function Techs({ techs }: { techs: Tech[] }) {
     return (
-        <ul className="techs">
+        <ul>
             {techs.map(({ title, src }) => (
                 <li key={title}>
                     <Image
@@ -91,7 +91,7 @@ function Techs({ techs }: { techs: Tech[] }) {
     );
 }
 
-const asap = Asap({ subsets: ["latin"] });
+// const asap = Asap({ subsets: ["latin"] });
 
 const localeKey = "lang";
 
@@ -121,16 +121,16 @@ export default function Home() {
                 />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <header id="main-header" className={asap.className}>
-                <div id="container">
+            <header>
+                <div>
                     <span></span>
-                    <nav id="navbar">
+                    <nav>
                         <a href="#">{t("home")}</a>
                         <a href="#skills">{t("skills.title")}</a>
                         <a href="#projects">{t("projects")}</a>
                         <a href="#contact">{t("contact")}</a>
                     </nav>
-                    <div id="switchers">
+                    <div>
                         <ThemeSwitcher />
                         <select
                             onChange={(e) =>
@@ -144,18 +144,22 @@ export default function Home() {
                     </div>
                 </div>
             </header>
-            <section id="home" className={`sxn ${asap.className}`}>
-                <div id="face-txt">
+            <section>
+                <div>
                     <h1>Cyril Ram.</h1>
-                    <h1 id="dev">
+                    <h1>
                         {t("dev1")} {t("dev2")}
                     </h1>
-                    <p id="desc">
+                    <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Donec vitae lectus ut est congue interdum. Cras finibus
-                        nunc vitae purus placerat.
+                        nunc vitae purus placerat.{" "}
+                        <a href="#" target="_blank">
+                            {t("cv")}.
+                        </a>
                     </p>
-                    <ul id="socials">
+
+                    <ul>
                         {socials.map(({ title, href, d }) => (
                             <li key={title}>
                                 <a href={href} target="_blank">
@@ -175,7 +179,6 @@ export default function Home() {
                     </ul>
                 </div>
                 <Image
-                    id="picture"
                     src="/images/picture.webp"
                     alt="Picture of me"
                     width={400}
@@ -183,12 +186,12 @@ export default function Home() {
                     priority
                 />
             </section>
-            <section id="skills" className={`sxn ${asap.className}`}>
-                <h2 className="title">{t("skills.title")}</h2>
+            <section>
+                <h2>{t("skills.title")}</h2>
                 <p>{t("skills.description")}</p>
                 {Object.keys(techs).map((tech, idx) => (
-                    <div className="content" id={tech} key={idx}>
-                        <div className="description">
+                    <div key={idx}>
+                        <div>
                             <h3>{t(`${tech}.title`)}</h3>
                             <p>{t(`${tech}.description`)}</p>
                             <Techs techs={techs[tech]} />
@@ -196,27 +199,15 @@ export default function Home() {
                     </div>
                 ))}
             </section>
-            <section id="projects" className={`sxn ${asap.className}`}>
-                <h2 className="title">{t("Projects")}</h2>
-                <div className="project">
-                    <div className="screen"></div>
-                </div>
-                <div className="project">
-                    <div className="screen"></div>
-                </div>
-                <div className="project">
-                    <div className="screen"></div>
-                </div>
-                <div className="project">
-                    <div className="screen"></div>
-                </div>
+            <section>
+                <h2>{t("Projects")}</h2>
             </section>
-            <section id="contact" className="sxn">
-                <h2 className="title">{t("contact")}</h2>
+            <section>
+                <h2>{t("contact")}</h2>
                 <Contact />
             </section>
-            <footer className={asap.className}>
-                <div id="copyrights">Cyril Ram. © 2024 | {t("copyrights")}</div>
+            <footer>
+                <div>Cyril Ram. © 2024 | {t("copyrights")}</div>
             </footer>
         </ThemeProvider>
     );
