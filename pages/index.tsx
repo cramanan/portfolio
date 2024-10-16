@@ -122,8 +122,8 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <header>
-                <div>
-                    <span></span>
+                <div className="bg-black">
+                    <span />
                     <nav>
                         <a href="#">{t("home")}</a>
                         <a href="#skills">{t("skills.title")}</a>
