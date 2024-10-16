@@ -15,7 +15,7 @@ export default function ThemeSwitcher() {
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="var(--foreground)"
-                width={20}
+                width={24}
             >
                 {mount && (
                     <path

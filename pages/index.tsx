@@ -2,13 +2,13 @@ import Head from "next/head";
 import Image from "next/image";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
 import Contact from "@/components/Contact";
-
 import { useTranslation } from "next-i18next";
 import { ThemeProvider } from "next-themes";
 import { useEffect } from "react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { GetStaticProps } from "next";
 // import { Asap } from "next/font/google";
+// const asap = Asap({ subsets: ["latin"] });
 
 type Tech = { title: string; src: string };
 
@@ -91,8 +91,6 @@ function Techs({ techs }: { techs: Tech[] }) {
     );
 }
 
-// const asap = Asap({ subsets: ["latin"] });
-
 const localeKey = "lang";
 
 export default function Home() {
@@ -121,18 +119,19 @@ export default function Home() {
                 />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <header>
-                <div className="bg-black">
+            <header className="fixed w-screen">
+                <div className="max-w-[1400px] h-14 m-auto flex items-center justify-between">
                     <span />
-                    <nav>
+                    <nav className="flex gap-14 text-2xl">
                         <a href="#">{t("home")}</a>
                         <a href="#skills">{t("skills.title")}</a>
                         <a href="#projects">{t("projects")}</a>
                         <a href="#contact">{t("contact")}</a>
                     </nav>
-                    <div>
+                    <div className="h-full flex items-center gap-3">
                         <ThemeSwitcher />
                         <select
+                            className="bg-transparent outline-none text-xl"
                             onChange={(e) =>
                                 i18n.changeLanguage(e.target.value)
                             }
@@ -144,22 +143,22 @@ export default function Home() {
                     </div>
                 </div>
             </header>
-            <section>
+            <section className="h-screen flex items-center justify-evenly">
                 <div>
-                    <h1>Cyril Ram.</h1>
-                    <h1>
+                    <h1 className="text-5xl font-semibold">Cyril Ram.</h1>
+                    <h1 className="text-6xl font-bold py-1">
                         {t("dev1")} {t("dev2")}
                     </h1>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Donec vitae lectus ut est congue interdum. Cras finibus
-                        nunc vitae purus placerat.{" "}
-                        <a href="#" target="_blank">
+                    <p className="w-[600px] text-lg py-1">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Reiciendis minima inventore, ipsa hic deserunt ullam
+                        voluptates in consequatur perspiciatis nobis?{" "}
+                        <a href="#" target="_blank" className="underline">
                             {t("cv")}.
                         </a>
                     </p>
 
-                    <ul>
+                    <ul className="flex list-none gap-4">
                         {socials.map(({ title, href, d }) => (
                             <li key={title}>
                                 <a href={href} target="_blank">
@@ -186,7 +185,7 @@ export default function Home() {
                     priority
                 />
             </section>
-            <section>
+            <section id="skills" className="h-screen pt-14">
                 <h2>{t("skills.title")}</h2>
                 <p>{t("skills.description")}</p>
                 {Object.keys(techs).map((tech, idx) => (
@@ -199,10 +198,10 @@ export default function Home() {
                     </div>
                 ))}
             </section>
-            <section>
+            <section id="projects" className="h-screen">
                 <h2>{t("Projects")}</h2>
             </section>
-            <section>
+            <section id="contact" className="h-screen">
                 <h2>{t("contact")}</h2>
                 <Contact />
             </section>
