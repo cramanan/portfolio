@@ -7,8 +7,9 @@ import { ThemeProvider } from "next-themes";
 import { useEffect } from "react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { GetStaticProps } from "next";
-// import { Asap } from "next/font/google";
-// const asap = Asap({ subsets: ["latin"] });
+import { Asap } from "next/font/google";
+
+const asapItalic = Asap({ subsets: ["latin-ext"], style: "italic" });
 
 type Tech = { title: string; src: string };
 
@@ -34,12 +35,12 @@ const techs: {
             src: "react.svg",
         },
         {
-            title: "Tailwind",
-            src: "tailwind.svg",
-        },
-        {
             title: "TypeScript",
             src: "typescript.svg",
+        },
+        {
+            title: "Tailwind",
+            src: "tailwind.svg",
         },
         {
             title: "Next JS",
@@ -74,16 +75,21 @@ const techs: {
 
 function Techs({ techs }: { techs: Tech[] }) {
     return (
-        <ul>
+        <ul className="flex gap-3">
             {techs.map(({ title, src }) => (
-                <li key={title}>
-                    <Image
-                        alt={title}
-                        width={40}
-                        height={40}
-                        loading="lazy"
-                        src={`/images/svgs/${src}`}
-                    />
+                <li
+                    key={title}
+                    className="relative flex items-center justify-between flex-col"
+                >
+                    <div className="h-full flex items-center">
+                        <Image
+                            alt={title}
+                            width={48}
+                            height={48}
+                            loading="lazy"
+                            src={`/images/svgs/${src}`}
+                        />
+                    </div>
                     <span>{title}</span>
                 </li>
             ))}
@@ -92,6 +98,17 @@ function Techs({ techs }: { techs: Tech[] }) {
 }
 
 const localeKey = "lang";
+
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+    return {
+        props: {
+            ...(await serverSideTranslations(locale ?? "fr", ["common"], null, [
+                "fr",
+                "en",
+            ])),
+        },
+    };
+};
 
 export default function Home() {
     const { t, i18n } = useTranslation();
@@ -122,13 +139,13 @@ export default function Home() {
             <header className="fixed w-screen">
                 <div className="max-w-[1400px] h-14 m-auto flex items-center justify-between">
                     <span />
-                    <nav className="flex gap-14 text-2xl">
+                    <nav className="flex gap-14 text-2xl font-medium">
                         <a href="#">{t("home")}</a>
                         <a href="#skills">{t("skills.title")}</a>
                         <a href="#projects">{t("projects")}</a>
                         <a href="#contact">{t("contact")}</a>
                     </nav>
-                    <div className="h-full flex items-center gap-3">
+                    <div className="h-full flex items-center gap-4">
                         <ThemeSwitcher />
                         <select
                             className="bg-transparent outline-none text-xl"
@@ -143,22 +160,25 @@ export default function Home() {
                     </div>
                 </div>
             </header>
+
             <section className="h-screen flex items-center justify-evenly">
                 <div>
-                    <h1 className="text-5xl font-semibold">Cyril Ram.</h1>
-                    <h1 className="text-6xl font-bold py-1">
+                    <h2 className="text-5xl font-semibold">Cyril Ram.</h2>
+                    <h1
+                        className={`text-6xl font-bold ${asapItalic.className}`}
+                    >
                         {t("dev1")} {t("dev2")}
                     </h1>
-                    <p className="w-[600px] text-lg py-1">
+                    <p className="w-[600px] text-xl py-2">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Reiciendis minima inventore, ipsa hic deserunt ullam
-                        voluptates in consequatur perspiciatis nobis?{" "}
-                        <a href="#" target="_blank" className="underline">
+                        voluptates in consequatur perspiciatis nobis?
+                        <a href="#" target="_blank" className="underline px-1">
                             {t("cv")}.
                         </a>
                     </p>
 
-                    <ul className="flex list-none gap-4">
+                    <ul className="flex list-none gap-4 h-full">
                         {socials.map(({ title, href, d }) => (
                             <li key={title}>
                                 <a href={href} target="_blank">
@@ -178,6 +198,7 @@ export default function Home() {
                     </ul>
                 </div>
                 <Image
+                    className="rounded-full"
                     src="/images/picture.webp"
                     alt="Picture of me"
                     width={400}
@@ -185,13 +206,20 @@ export default function Home() {
                     priority
                 />
             </section>
-            <section id="skills" className="h-screen pt-14">
-                <h2>{t("skills.title")}</h2>
+
+            <section id="skills" className="h-screen">
+                <h2
+                    className={`text-3xl pt-14 pb-2 pl-4 font-semibold ${asapItalic.className}`}
+                >
+                    {t("skills.title")}
+                </h2>
                 <p>{t("skills.description")}</p>
                 {Object.keys(techs).map((tech, idx) => (
                     <div key={idx}>
                         <div>
-                            <h3>{t(`${tech}.title`)}</h3>
+                            <h3 className="text-xl font-medium">
+                                {t(`${tech}.title`)}
+                            </h3>
                             <p>{t(`${tech}.description`)}</p>
                             <Techs techs={techs[tech]} />
                         </div>
@@ -199,26 +227,23 @@ export default function Home() {
                 ))}
             </section>
             <section id="projects" className="h-screen">
-                <h2>{t("Projects")}</h2>
+                <h2
+                    className={`text-3xl pl-4 pb-2 pt-14 font-semibold ${asapItalic.className}`}
+                >
+                    {t("Projects")}
+                </h2>
             </section>
             <section id="contact" className="h-screen">
-                <h2>{t("contact")}</h2>
+                <h2
+                    className={`text-3xl pl-4 pt-14 font-semibold ${asapItalic.className}`}
+                >
+                    {t("contact")}
+                </h2>
                 <Contact />
             </section>
-            <footer>
+            <footer className="text-center py-3 text-lg font-medium">
                 <div>Cyril Ram. © 2024 | {t("copyrights")}</div>
             </footer>
         </ThemeProvider>
     );
 }
-
-export const getStaticProps: GetStaticProps = async ({ locale }) => {
-    return {
-        props: {
-            ...(await serverSideTranslations(locale ?? "fr", ["common"], null, [
-                "fr",
-                "en",
-            ])),
-        },
-    };
-};
