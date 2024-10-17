@@ -78,9 +78,11 @@ function Techs({ techs }: { techs: Tech[] }) {
                     <div className="h-full flex items-center">
                         <Image
                             loading="lazy"
+                            loading="lazy"
                             alt={title}
                             width={48}
                             height={48}
+                            className="h-12 w-12"
                             className="h-12 w-12"
                             src={`/images/svgs/${src}`}
                         />
@@ -118,161 +120,204 @@ export default function () {
 
     return (
         <>
-            <Head>
-                <title>Cyril Ram.</title>
-                <meta name="author" content="Cyril Ramananjaona" />
-                <meta
-                    name="description"
-                    content="Portfolio de Cyril Ramananjaona"
-                />
-                <meta
-                    name="viewport"
-                    content="width=device-width, initial-scale=1.0"
-                />
-                <meta
-                    name="keywords"
-                    content="Portfolio, Dévelopement Web, Web Development, Code, Full-Stack, React, TypeScript, Tailwind, HTML, CSS, JavaScript, Github, Git"
-                />
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
-            <header className="fixed w-screen">
-                <div className="max-w-[1400px] m-auto flex items-center justify-between py-4">
-                    <span />
-                    <nav className="flex gap-16 text-3xl font-medium">
-                        <a href="#" className={asapItalic.className}>
-                            {t("home")}
-                        </a>
-                        <a href="#skills" className={asapItalic.className}>
-                            {t("skills.title")}
-                        </a>
-                        <a href="#projects" className={asapItalic.className}>
-                            {t("projects")}
-                        </a>
-                        <a href="#contact" className={asapItalic.className}>
-                            Contact
-                        </a>
-                    </nav>
-                    <div className="h-full flex items-center gap-4">
-                        <ThemeSwitcher />
-                        <select
-                            className="bg-transparent outline-none text-xl"
-                            onChange={(e) =>
-                                i18n.changeLanguage(e.target.value)
-                            }
-                            value={i18n.language}
-                            title="Language switcher"
+            <>
+                <Head>
+                    <title>Cyril Ram.</title>
+                    <meta name="author" content="Cyril Ramananjaona" />
+                    <meta
+                        name="description"
+                        content="Portfolio de Cyril Ramananjaona"
+                    />
+                    <meta
+                        name="viewport"
+                        content="width=device-width, initial-scale=1.0"
+                    />
+                    <meta
+                        name="keywords"
+                        content="Portfolio, Dévelopement Web, Web Development, Code, Full-Stack, React, TypeScript, Tailwind, HTML, CSS, JavaScript, Github, Git"
+                    />
+                    <link rel="icon" href="/favicon.ico" />
+                </Head>
+                <header className="fixed w-screen">
+                    <div className="max-w-[1400px] m-auto flex items-center justify-between py-4">
+                        <span />
+                        <nav className="flex gap-16 text-3xl font-medium">
+                            <a href="#" className={asapItalic.className}>
+                                {t("home")}
+                            </a>
+                            <a href="#skills" className={asapItalic.className}>
+                                {t("skills.title")}
+                            </a>
+                            <a
+                                href="#projects"
+                                className={asapItalic.className}
+                            >
+                                {t("projects")}
+                            </a>
+                            <a href="#contact" className={asapItalic.className}>
+                                Contact
+                            </a>
+                        </nav>
+                        <div className="h-full flex items-center gap-4">
+                            <ThemeSwitcher />
+                            <select
+                                className="bg-transparent outline-none text-xl"
+                                onChange={(e) =>
+                                    i18n.changeLanguage(e.target.value)
+                                }
+                                value={i18n.language}
+                                title="Language switcher"
+                            >
+                                <option value="fr">🇫🇷</option>
+                                <option value="en">🇺🇸</option>
+                            </select>
+                        </div>
+                    </div>
+                </header>
+
+                <section className="h-screen flex items-center justify-evenly">
+                    <div>
+                        <h2 className="text-5xl font-semibold">Cyril Ram.</h2>
+                        <h1
+                            className={`text-6xl font-bold ${asapItalic.className}`}
                         >
-                            <option value="fr">🇫🇷</option>
-                            <option value="en">🇺🇸</option>
-                        </select>
-                    </div>
-                </div>
-            </header>
-
-            <section className="h-screen flex items-center justify-evenly">
-                <div>
-                    <h2 className="text-5xl font-semibold">Cyril Ram.</h2>
-                    <h1
-                        className={`text-6xl font-bold ${asapItalic.className}`}
-                    >
-                        {t("dev1")} {t("dev2")}
-                    </h1>
-                    <p className="w-[600px] text-xl py-2">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Reiciendis minima inventore, ipsa hic deserunt ullam
-                        voluptates in consequatur perspiciatis nobis?
-                        <a href="#" target="_blank" className="underline px-1">
-                            {t("cv")}.
-                        </a>
-                    </p>
-                </div>
-                <Image
-                    className="rounded-full border-2 border-foreground"
-                    src="/images/picture.webp"
-                    alt="Picture of Cyril Ram."
-                    width={400}
-                    height={400}
-                    priority
-                />
-            </section>
-
-            <section id="skills" className="h-screen">
-                <h2
-                    className={`text-4xl pt-14 font-semibold ${asapItalic.className}`}
-                >
-                    {t("skills.title")}
-                </h2>
-                <p className="text-xl">{t("skills.description")}</p>
-                {Object.keys(techs).map((tech, idx) => (
-                    <div key={idx}>
-                        <h3 className="text-xl font-medium">
-                            {t(`${tech}.title`)}
-                        </h3>
-                        <p className="w-96">
-                            {/* {t(`${tech}.description`)} */} Lorem ipsum dolor
-                            sit amet consectetur adipisicing elit. Quod pariatur
-                            earum reprehenderit.
+                            {t("dev1")} {t("dev2")}
+                        </h1>
+                        <p className="w-[600px] text-xl py-2">
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Reiciendis minima inventore, ipsa hic deserunt
+                            ullam voluptates in consequatur perspiciatis nobis?
+                            <a
+                                href="#"
+                                target="_blank"
+                                className="underline px-1"
+                            >
+                                {t("cv")}.
+                            </a>
                         </p>
-                        <Techs techs={techs[tech]} />
-                    </div>
-                ))}
-            </section>
-            <section id="projects" className="h-screen">
-                <h2
-                    className={`text-4xl pt-14 font-semibold ${asapItalic.className}`}
-                >
-                    {t("Projects")}
-                </h2>
-            </section>
-            <section
-                id="contact"
-                className="h-screen flex items-center flex-col justify-center"
-            >
-                <h2
-                    className={`text-6xl font-semibold ${asapItalic.className}`}
-                >
-                    {t("contact.title")}
-                </h2>
-                <p className="text-2xl my-4">{t("contact.description")}</p>
-                <div className="flex flex-col gap-3">
-                    {socials.map(({ href, title, d }) => (
-                        <a
-                            key={title}
-                            href={href}
-                            title={href}
-                            target="_blank"
-                            className="flex gap-3 underline w-fit text-foreground text-3xl"
+                        <span
+                            className="flex gap-2 w-fit justify-center bg-foreground text-background rounded-lg p-1 cursor-pointer text-lg"
+                            onClick={() => navigator.clipboard.writeText(email)}
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 24 24"
-                                fill="var(--foreground)"
-                                width={40}
+                                fill="var(--background)"
+                                width={24}
                             >
-                                <path d={d} />
+                                <path d="M3 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3ZM20 7.23792L12.0718 14.338L4 7.21594V19H20V7.23792ZM4.51146 5L12.0619 11.662L19.501 5H4.51146Z"></path>
                             </svg>
-                            {title}
-                        </a>
-                    ))}
-                </div>
-                <div
-                    title="My email: cramananjaonapro@gmail.com"
-                    className="flex gap-3 w-fit text-foreground text-3xl mt-1"
-                >
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        width={40}
-                        fill="var(--foreground)"
+                            {email}
+                        </span>
+
+                        <ul className="flex list-none gap-4 h-full my-2">
+                            {socials.map(({ title, href, d }) => (
+                                <li key={title}>
+                                    <a href={href} target="_blank">
+                                        <svg
+                                            role="img"
+                                            viewBox="0 0 24 24"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            fill="var(--foreground)"
+                                            width={40}
+                                            height={40}
+                                        >
+                                            <title>{title}</title>
+                                            <path d={d} />
+                                        </svg>
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                    <Image
+                        className="rounded-full border-2 border-foreground"
+                        src="/images/picture.webp"
+                        alt="Picture of Cyril Ram."
+                        width={400}
+                        height={400}
+                        priority
+                    />
+                </section>
+
+                <section id="skills" className="h-screen">
+                    <h2
+                        className={`text-4xl pt-14 font-semibold ${asapItalic.className}`}
                     >
-                        <path d="M3 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3ZM20 7.23792L12.0718 14.338L4 7.21594V19H20V7.23792ZM4.51146 5L12.0619 11.662L19.501 5H4.51146Z"></path>
-                    </svg>
-                    cramananjaonapro@gmail.com
-                </div>
-            </section>
-            <footer className="text-center py-3 text-xl font-medium">
-                <div>Cyril Ram. © 2024 | {t("copyrights")}</div>
-            </footer>
+                        {t("skills.title")}
+                    </h2>
+                    <p className="text-xl">{t("skills.description")}</p>
+                    {Object.keys(techs).map((tech, idx) => (
+                        <div key={idx}>
+                            <h3 className="text-xl font-medium">
+                                {t(`${tech}.title`)}
+                            </h3>
+                            <p className="w-96">
+                                {/* {t(`${tech}.description`)} */} Lorem ipsum
+                                dolor sit amet consectetur adipisicing elit.
+                                Quod pariatur earum reprehenderit.
+                            </p>
+                            <Techs techs={techs[tech]} />
+                        </div>
+                    ))}
+                </section>
+                <section id="projects" className="h-screen">
+                    <h2
+                        className={`text-4xl pt-14 font-semibold ${asapItalic.className}`}
+                    >
+                        {t("Projects")}
+                    </h2>
+                </section>
+                <section
+                    id="contact"
+                    className="h-screen flex items-center flex-col justify-center"
+                >
+                    <h2
+                        className={`text-6xl font-semibold ${asapItalic.className}`}
+                    >
+                        {t("contact.title")}
+                    </h2>
+                    <p className="text-2xl my-4">{t("contact.description")}</p>
+                    <div className="flex flex-col gap-3">
+                        {socials.map(({ href, title, d }) => (
+                            <a
+                                key={title}
+                                href={href}
+                                title={href}
+                                target="_blank"
+                                className="flex gap-3 underline w-fit text-foreground text-3xl"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24"
+                                    fill="var(--foreground)"
+                                    width={40}
+                                >
+                                    <path d={d} />
+                                </svg>
+                                {title}
+                            </a>
+                        ))}
+                    </div>
+                    <div
+                        title="My email: cramananjaonapro@gmail.com"
+                        className="flex gap-3 w-fit text-foreground text-3xl mt-1"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            width={40}
+                            fill="var(--foreground)"
+                        >
+                            <path d="M3 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3ZM20 7.23792L12.0718 14.338L4 7.21594V19H20V7.23792ZM4.51146 5L12.0619 11.662L19.501 5H4.51146Z"></path>
+                        </svg>
+                        cramananjaonapro@gmail.com
+                    </div>
+                </section>
+                <footer className="text-center py-3 text-xl font-medium">
+                    <div>Cyril Ram. © 2024 | {t("copyrights")}</div>
+                </footer>
+            </>
         </>
     );
 }
