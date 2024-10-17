@@ -2,6 +2,7 @@ import { appWithTranslation } from "next-i18next";
 import type { AppProps } from "next/app";
 import "@/styles/globals.css";
 import { Asap } from "next/font/google";
+import { ThemeProvider } from "next-themes";
 
 const asap = Asap({
     subsets: ["latin"],
@@ -10,9 +11,11 @@ const asap = Asap({
 
 function App({ Component, pageProps }: AppProps) {
     return (
-        <main className={asap.className}>
-            <Component {...pageProps} />
-        </main>
+        <ThemeProvider enableSystem>
+            <main className={asap.className}>
+                <Component {...pageProps} />
+            </main>
+        </ThemeProvider>
     );
 }
 
