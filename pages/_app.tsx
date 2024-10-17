@@ -10,7 +10,7 @@ const asap = Asap({
 
 function App({ Component, pageProps }: AppProps) {
     return (
-        <main className={`${asap.className}`}>
+        <main className={asap.className}>
             <Component {...pageProps} />
         </main>
     );

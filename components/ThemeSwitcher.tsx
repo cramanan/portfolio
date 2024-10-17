@@ -10,7 +10,10 @@ export default function ThemeSwitcher() {
     useEffect(() => setMount(true), []);
 
     return (
-        <button onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
+        <button
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            title="Theme switcher"
+        >
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"

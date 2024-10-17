@@ -10,15 +10,13 @@
     "skills.description": "Here's what I can do to make your ideas and projects a reality with some tools that I use.",
 
     "frontend.title": "Quality and interactive interfaces",
-    "frontend.description": "I am a skilled frontend developer with a passion for building interactive and responsive interfaces. Capable of creating seamless user experiences across various devices and browsers, with expertise in HTML, CSS, JavaScript, and popular frontend frameworks and libraries. strong understanding of web accessibility standards, and best practices to ensure an inclusive and accessible experience for all users from all across the world.",
+    "frontend.description": "Description",
 
     "backend.title": "Robust APIs with optimised deployements",
     "backend.description": "Description",
 
     "tools.title": "Title",
     "tools.description": "Description",
-
-    "contact": "Contact me",
 
     "copyrights": "All Rights Reserved"
 }
