@@ -70,10 +70,6 @@ const techs: {
             title: "Docker",
             src: "docker.svg",
         },
-        {
-            title: "Vercel",
-            src: "vercel.svg",
-        },
     ],
 };
 
@@ -87,10 +83,11 @@ function Techs({ techs }: { techs: Tech[] }) {
                 >
                     <div className="h-full flex items-center">
                         <Image
+                            loading="lazy"
                             alt={title}
                             width={48}
                             height={48}
-                            loading="lazy"
+                            className="h-12 w-12"
                             src={`/images/svgs/${src}`}
                         />
                     </div>
@@ -128,7 +125,7 @@ export default function Home() {
     );
 
     return (
-        <ThemeProvider>
+        <>
             <Head>
                 <title>Cyril Ram.</title>
                 <meta
@@ -207,6 +204,7 @@ export default function Home() {
                                         xmlns="http://www.w3.org/2000/svg"
                                         fill="var(--foreground)"
                                         width={40}
+                                        height={40}
                                     >
                                         <title>{title}</title>
                                         <path d={d} />
@@ -256,6 +254,6 @@ export default function Home() {
             <footer className="text-center py-3 text-lg font-medium">
                 <div>Cyril Ram. © 2024 | {t("copyrights")}</div>
             </footer>
-        </ThemeProvider>
+        </>
     );
 }
