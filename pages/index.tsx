@@ -113,22 +113,26 @@ export default function Home() {
         i18n.changeLanguage(localStorage.getItem(localeKey) ?? "fr");
     }, [i18n]);
 
-    useEffect(
-        () => localStorage.setItem(localeKey, i18n.language),
-        [i18n.language]
-    );
+    useEffect(() => {
+        localStorage.setItem(localeKey, i18n.language);
+    }, [i18n.language]);
 
     return (
         <>
             <Head>
                 <title>Cyril Ram.</title>
+                <meta name="author" content="Cyril Ramananjaona" />
                 <meta
                     name="description"
                     content="Cyril Ramananjaona's Portfolio"
                 />
                 <meta
                     name="viewport"
-                    content="width=device-width, initial-scale=1"
+                    content="width=device-width, initial-scale=1.0"
+                />
+                <meta
+                    name="keywords"
+                    content="Portfolio, Web Development, Code, Full-Stack, React, TypeScript, Tailwind, HTML, CSS, JavaScript, Github"
                 />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
@@ -184,9 +188,9 @@ export default function Home() {
                     </p>
                 </div>
                 <Image
-                    className="rounded-full"
+                    className="rounded-full border-2 border-foreground"
                     src="/images/picture.webp"
-                    alt="Picture of me"
+                    alt="Picture of Cyril Ram."
                     width={400}
                     height={400}
                     priority
@@ -195,7 +199,7 @@ export default function Home() {
 
             <section id="skills" className="h-screen">
                 <h2
-                    className={`text-4xl font-semibold ${asapItalic.className}`}
+                    className={`text-4xl pt-14 font-semibold ${asapItalic.className}`}
                 >
                     {t("skills.title")}
                 </h2>
@@ -208,9 +212,7 @@ export default function Home() {
                         <p className="w-96">
                             {/* {t(`${tech}.description`)} */} Lorem ipsum dolor
                             sit amet consectetur adipisicing elit. Quod pariatur
-                            earum reprehenderit rem molestias illo aperiam amet
-                            vel consequuntur doloremque velit sit id tempora,
-                            eius illum cumque quis, voluptate totam.
+                            earum reprehenderit.
                         </p>
                         <Techs techs={techs[tech]} />
                     </div>
@@ -218,7 +220,7 @@ export default function Home() {
             </section>
             <section id="projects" className="h-screen">
                 <h2
-                    className={`text-3xl font-semibold ${asapItalic.className}`}
+                    className={`text-4xl pt-14 font-semibold ${asapItalic.className}`}
                 >
                     {t("Projects")}
                 </h2>
