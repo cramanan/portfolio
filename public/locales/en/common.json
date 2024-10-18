@@ -9,14 +9,17 @@
     "skills.title": "Skills",
     "skills.description": "Here's what I can do to make your ideas and projects a reality with some tools that I use.",
 
-    "frontend.title": "Quality and interactive interfaces",
+    "frontend.title": "Quality interfaces",
     "frontend.description": "Description",
 
-    "backend.title": "Robust APIs with optimised deployements",
+    "backend.title": "Robust APIs",
     "backend.description": "Description",
 
     "tools.title": "Title",
     "tools.description": "Description",
+
+    "contact.title": "Let's get in touch",
+    "contact.description": "You can reach me via",
 
     "copyrights": "All Rights Reserved"
 }
