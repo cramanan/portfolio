@@ -137,7 +137,7 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <header className="fixed w-screen">
-                <div className="max-w-[1400px] h-14 m-auto flex items-center justify-between">
+                <div className="max-w-[1400px] m-auto flex items-center justify-between py-4">
                     <span />
                     <nav className="flex gap-16 text-3xl font-medium">
                         <a href="#" className={asapItalic.className}>
@@ -233,7 +233,7 @@ export default function Home() {
                         {t("contact.title")}
                     </h2>
                     <p className="text-2xl">{t("contact.description")}</p>
-                    <ul className="flex list-none gap-5 my-2">
+                    <ul className="flex list-none gap-5">
                         {socials.map(({ title, href, d }) => (
                             <li key={title}>
                                 <a href={href} target="_blank">
@@ -253,13 +253,15 @@ export default function Home() {
                         ))}
                     </ul>
                     <span
-                        className="flex gap-2 w-fit justify-center bg-foreground text-background rounded-lg p-1 cursor-pointer text-lg"
-                        onClick={() => navigator.clipboard.writeText(email)}
+                        className="flex gap-1 w-fit items-center text-foreground text-lg"
+                        // cursor-pointer
+
+                        // onClick={() => navigator.clipboard.writeText(email)}
                     >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 24 24"
-                            fill="var(--background)"
+                            fill="var(--foreground)"
                             width={24}
                         >
                             <path d="M3 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3ZM20 7.23792L12.0718 14.338L4 7.21594V19H20V7.23792ZM4.51146 5L12.0619 11.662L19.501 5H4.51146Z"></path>
@@ -268,7 +270,7 @@ export default function Home() {
                     </span>
                 </div>
             </section>
-            <footer className="text-center py-3 text-lg font-medium">
+            <footer className="text-center py-3 text-xl font-medium">
                 <div>Cyril Ram. © 2024 | {t("copyrights")}</div>
             </footer>
         </>
