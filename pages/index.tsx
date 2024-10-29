@@ -105,7 +105,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
     };
 };
 
-export default function () {
+export default function Index() {
     const { t, i18n } = useTranslation();
 
     useEffect(() => {
