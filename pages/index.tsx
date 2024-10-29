@@ -12,7 +12,7 @@ const asapItalic = Asap({ subsets: ["latin-ext"], style: "italic" });
 const socials = [
     {
         href: "https://www.linkedin.com/in/cyril-ramananjaona-837555304",
-        title: "Linkedin",
+        title: "LinkedIn",
         d: "M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z",
     },
     {
@@ -93,7 +93,6 @@ function Techs({ techs }: { techs: Tech[] }) {
 }
 
 const localeKey = "lang";
-const email = "cramananjaonapro@gmail.com";
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
     return {
@@ -106,7 +105,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
     };
 };
 
-export default function Home() {
+export default function () {
     const { t, i18n } = useTranslation();
 
     useEffect(() => {
@@ -124,7 +123,7 @@ export default function Home() {
                 <meta name="author" content="Cyril Ramananjaona" />
                 <meta
                     name="description"
-                    content="Cyril Ramananjaona's Portfolio"
+                    content="Portfolio de Cyril Ramananjaona"
                 />
                 <meta
                     name="viewport"
@@ -132,7 +131,7 @@ export default function Home() {
                 />
                 <meta
                     name="keywords"
-                    content="Portfolio, Web Development, Code, Full-Stack, React, TypeScript, Tailwind, HTML, CSS, JavaScript, Github"
+                    content="Portfolio, Dévelopement Web, Web Development, Code, Full-Stack, React, TypeScript, Tailwind, HTML, CSS, JavaScript, Github, Git"
                 />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
@@ -225,49 +224,50 @@ export default function Home() {
                     {t("Projects")}
                 </h2>
             </section>
-            <section id="contact" className="h-screen">
-                <div className="flex flex-col items-center justify-center h-full gap-3">
-                    <h2
-                        className={`text-6xl font-semibold ${asapItalic.className}`}
-                    >
-                        {t("contact.title")}
-                    </h2>
-                    <p className="text-2xl">{t("contact.description")}</p>
-                    <ul className="flex list-none gap-5">
-                        {socials.map(({ title, href, d }) => (
-                            <li key={title}>
-                                <a href={href} target="_blank">
-                                    <svg
-                                        role="img"
-                                        viewBox="0 0 24 24"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        fill="var(--foreground)"
-                                        width={50}
-                                        height={50}
-                                    >
-                                        <title>{title}</title>
-                                        <path d={d} />
-                                    </svg>
-                                </a>
-                            </li>
-                        ))}
-                    </ul>
-                    <span
-                        className="flex gap-1 w-fit items-center text-foreground text-lg"
-                        // cursor-pointer
-
-                        // onClick={() => navigator.clipboard.writeText(email)}
-                    >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 24 24"
-                            fill="var(--foreground)"
-                            width={24}
+            <section
+                id="contact"
+                className="h-screen flex items-center flex-col justify-center"
+            >
+                <h2
+                    className={`text-6xl font-semibold ${asapItalic.className}`}
+                >
+                    {t("contact.title")}
+                </h2>
+                <p className="text-2xl my-4">{t("contact.description")}</p>
+                <div className="flex flex-col gap-3">
+                    {socials.map(({ href, title, d }) => (
+                        <a
+                            key={title}
+                            href={href}
+                            title={href}
+                            target="_blank"
+                            className="flex gap-3 underline w-fit text-foreground text-3xl"
                         >
-                            <path d="M3 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3ZM20 7.23792L12.0718 14.338L4 7.21594V19H20V7.23792ZM4.51146 5L12.0619 11.662L19.501 5H4.51146Z"></path>
-                        </svg>
-                        {email}
-                    </span>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="var(--foreground)"
+                                width={40}
+                            >
+                                <path d={d} />
+                            </svg>
+                            {title}
+                        </a>
+                    ))}
+                </div>
+                <div
+                    title="My email: cramananjaonapro@gmail.com"
+                    className="flex gap-3 w-fit text-foreground text-3xl mt-1"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        width={40}
+                        fill="var(--foreground)"
+                    >
+                        <path d="M3 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3ZM20 7.23792L12.0718 14.338L4 7.21594V19H20V7.23792ZM4.51146 5L12.0619 11.662L19.501 5H4.51146Z"></path>
+                    </svg>
+                    cramananjaonapro@gmail.com
                 </div>
             </section>
             <footer className="text-center py-3 text-xl font-medium">
