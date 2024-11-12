@@ -146,7 +146,7 @@ export default function Index() {
                     </div>
                 </div>
             </header>
-            <section className="flex pt-3 flex-col items-center">
+            <section className="flex pt-10 flex-col items-center">
                 <Image
                     src="/images/picture.webp"
                     alt="Picture of Cyril Ram."
