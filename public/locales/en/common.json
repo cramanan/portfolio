@@ -1,10 +1,10 @@
 {
     "home": "Home",
-    "projects": "Projects",
     "dev1": "Full-Stack",
     "dev2": "Developer",
-
+    
     "cv": "See my resume",
+    "projects.title": "Projects",
 
     "skills.title": "Skills",
 

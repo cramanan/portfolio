@@ -1,12 +1,12 @@
 {
     "home": "Accueil",
-    "projects": "Projets",
     "dev1": "Développeur",
     "dev2": "Full-Stack",
-
+    
     "cv": "Voir mon CV",
-
+    
     "skills.title": "Compétences",
+    "projects.title": "Projets",
 
     "frontend.title": "Des interfaces de qualité",
     "frontend.description": "Description",

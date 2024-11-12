@@ -1,8 +1,9 @@
 import { appWithTranslation } from "next-i18next";
 import type { AppProps } from "next/app";
-import "@/styles/globals.css";
 import { Asap } from "next/font/google";
 import { ThemeProvider } from "next-themes";
+
+import "@/styles/globals.css";
 
 const asap = Asap({
     subsets: ["latin"],
